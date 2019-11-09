@@ -1,0 +1,109 @@
+html,body{
+	padding: 0;
+	margin: 0;
+}
+body{
+	background-color: #DEFFF2;
+}
+
+#header{
+	
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	text-align: center;
+	width: 750px;
+	background-color: #464F51;
+	color:white;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	font-size: 20px;
+}
+
+#headerFont{
+	font-family: 'Poppins', sans-serif;
+}
+
+#todoList{
+	background-color: white;
+}
+
+
+#taskList {
+	width: 500px;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top: 100px;
+	background-color: #0FF4C6;
+	box-shadow: 6px 6px 15px grey;
+}
+
+#taskList h1{
+	padding-left: 25px;
+}
+
+#taskHeader {
+	position: relative;
+}
+
+#plusIcon{
+	position: absolute;
+	top:0;
+	right:15px;	
+}
+
+#plusIcon{
+	cursor: pointer;
+}
+
+#ulElement{
+	list-style-type: none;
+	margin-bottom: 0;
+	margin-top:0;
+	font-family: 'Open Sans', sans-serif;
+	padding-left: 0;
+}
+
+#userInput{
+	width: 99%;
+	font-family: 'Open Sans', sans-serif;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	padding-left: 5px;
+	border: none;
+	font-size: 20px;
+}
+
+.boxSpacing{
+	margin-right: 8px;
+	margin-left: 5px;
+}
+
+.boxSpacing:hover{
+	cursor: pointer;
+}
+
+.taskText:hover {
+	cursor: pointer;
+}
+
+.task:hover{
+	background-color: #C8CECD;
+
+}
+
+.linethrough{
+	text-decoration: line-through black;
+	font-style: italic;
+}
+
+.task{
+	border-top-style: solid;
+	border-top-width: 1px;
+	border-top-color: black;
+	padding-left: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+}

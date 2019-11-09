@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> To Do List</title>
+	<link rel="stylesheet" type="text/css" href= "style.css">
+	<meta charset="UTF-8">
+	<script src="https://kit.fontawesome.com/3af76bfcb7.js" crossorigin="anonymous"></script>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans|Poppins&display=swap" rel="stylesheet">
+
+</head>
+<body>
+	<div id = "header">Today's weather in Los Angeles: <span id = "degrees"></span> <span id = "description">
+	</span>. Feels like <span id= "feelsDegrees"></span></div>
+
+	<div class = "container" id="taskList">
+		<div class = "row" id = "taskHeader">
+			<h1 id = "headerFont"> To Do List</h1>
+			<i class="fas fa-plus fa-3x" id = "plusIcon"></i>
+		</div>
+		<div class = "row">
+			<form id = "formBoi">
+				<input type="text" id = "userInput" placeholder="  Add to-do item here">
+			</form>
+		</div>
+
+		<div class="row" id = "todoList">
+			<ul id = "ulElement"></ul>
+		</div>
+
+	</div>
+
+	<script src="http://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+	<script src = "script.js"></script>
+</body>
+</html>

@@ -1,0 +1,229 @@
+html,body{
+	margin:0;
+	padding:0;
+}
+
+.header {
+	text-align: center;
+	background-color: black;
+
+}
+
+.header h2{
+	font-family: 'Oswald', sans-serif;
+	color: white;
+	margin-top: 0px;
+	margin-bottom: 0px;
+	padding-top:10px;
+	padding-bottom: 10px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.productInfo #productName h1{
+	font-family: 'Cardo', serif;
+	padding-left: 10px;
+}
+
+.productInfo .imagePromo img{
+	width: 85%;
+	margin-left:5%;
+	margin-right:5%;
+	padding-left: 2.5%;
+	padding-right: 2.5%;
+	position: relative;
+	margin-top: 55px;
+}
+
+.productInfo .imagePromo #promo p{
+	margin-left: auto;
+	margin-right: auto;
+	background-color: #81E7D9 ;
+	border-color: black ;
+	border-style:solid ;
+	border-width: 3px;
+	text-align: center;
+	width: 75%;
+	padding-top: 10px;
+	padding-bottom: 5px;
+	font-family: 'Manjari', sans-serif;
+	margin-top: 10px;
+
+}
+
+.productInfo .priceInfo p{
+	font-family: 'Manjari', sans-serif;
+	font-size: 20px;
+	padding-left: 3%
+}
+
+.productInfo .priceInfo img {
+	width: 60%;
+	margin-left: 35px;
+}
+
+.productInfo .priceInfo #reviewInfo ul{
+	padding-left: 10%;
+	padding-right: 5%;
+	font-family: 'Manjari', sans-serif;
+	
+}
+
+.productInfo .priceInfo #productName {
+	position: absolute;
+	top:40px;
+	left:30px;
+}
+
+h2{
+	padding-left: 20px;
+	margin-top: 20px;
+	width:80%;
+	font-family: 'Manjari', sans-serif;
+
+}
+
+.relatedProducts .products{
+	border-width: 4px;
+	border-style: solid;
+	position: relative;
+	width:60%;
+	height: 300px;
+	margin-top: 10px;
+	margin-left: auto;
+	margin-right: auto;
+	padding-top:10px;
+	margin-bottom: 20px;
+	box-sizing: border-box;
+
+}
+
+.relatedProducts .products img{
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+}
+
+.relatedProducts .products .overlay{
+	position:absolute;
+	top: 0;
+	left:0;
+	right: 0;
+	bottom: 0;
+	display:none;
+	width:100%;
+	height:100%;
+	background-color: rgba(0,0,0,0.5);
+}
+
+.relatedProducts .products .overlay .text{
+	position: absolute;
+	top:50%;
+	width:180px;
+	left: 50%;
+	font-size: 25px;
+	text-align: center;
+	color:white;
+	transform: translate(-50%,-50%);
+	-ms-transform: translate(-50%,-50%);
+	font-family: 'Manjari', sans-serif;
+}
+
+
+.relatedProducts .products:hover .overlay{
+	display: block;
+}
+
+
+@media (min-width: 768px){
+
+	.productInfo .imagePromo img{
+		margin-top: 5px;
+	}
+	.productInfo .imagePromo {
+		float:left;
+		width:54%;
+	}
+
+	.productInfo .priceInfo #productName {
+		position: static;
+	}
+
+	.productInfo .imagePromo #promo{
+		margin-bottom: 150px;
+	}
+
+	.productInfo .priceInfo #reviewInfo #reviewFloat {
+		clear: both;
+	}
+
+	.productInfo .priceInfo #reviewInfo ul{
+		margin-bottom: 0px;
+	}
+
+	.relatedProducts{
+		margin-left: 3%;
+		
+	}
+
+	.productInfo .priceInfo img {
+		width:200px;
+		height: 15px;
+		margin-left: 0px
+	}
+
+	.relatedProducts .products{
+		margin-left: 2%;
+		margin-right: 2%;
+		float: left;
+		width: 45%;
+		box-sizing: border-box;
+	}
+
+	h2{
+		margin-left: 3%;
+
+	}
+
+	.productInfo .imagePromo #promo p{
+		width: 70%;
+
+	}
+
+	.relatedProducts .products{
+		height: 300px;
+	}
+
+}
+
+@media(min-width: 992px){
+		.relatedProducts .products{
+			width:20%;
+		}
+
+		.product .relatedProducts .products{
+			height: 200px;
+			
+		}
+
+		.product{
+			padding-top: 20px;
+			max-width: 1000px;
+			margin-left: auto;
+			margin-right:auto;
+			background-color: white;
+			height: 100vh;
+			position: static;
+		}
+
+		body{
+			background-color: grey;
+		}
+		.productInfo .imagePromo #promo{
+		margin-bottom: 50px;
+		}
+
+		.product .relatedProducts #fourColumnFloat{
+			clear:both;
+		}
+}

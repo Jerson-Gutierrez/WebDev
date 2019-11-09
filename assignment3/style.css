@@ -1,0 +1,186 @@
+body,html{
+	margin: 0;
+	padding: 0;
+}
+
+.bgcolor{
+	
+	border-style: solid;
+	border-width: 2px;
+	border-color: black;
+	border-radius: 7px;
+}
+
+.navcolor{
+	background-color: #208393;
+	font-weight:bold;
+
+}
+
+.navbar .companylogo {
+	font-family: 'Megrim', cursive;
+	font-size: 30px;
+	color:white;
+
+}
+
+.navbar .collapse ul li .currentactive{
+	color:white;
+}
+
+
+.JumboHeaderImg{
+	background-image: url("images/background2.jpg");
+	height:550px;
+	background-size: cover;
+	background-position: bottom;
+	align-content: center;
+}
+
+.jumbopos{
+	position: relative;
+	padding: 0;
+	margin:0;
+	width:100%;
+}
+
+.jumbopos .containerpos{
+	position:absolute;
+	padding-left: 5%;
+	padding-right: 5%;
+	top:20%;
+
+}
+
+.jumbopos .containerpos h1{
+	text-align: center;
+	font-family: 'Megrim', cursive;
+	font-weight: 900;
+	font-size: 60px;
+
+	
+}
+
+.jumbopos .containerpos h3{
+	text-align: center;
+	color: black;
+	font-weight: 400;
+}
+
+.containbox{
+	padding: 0;
+	margin:0;
+	width:100%;
+	max-width: none;
+}
+
+.container .row {
+	border-bottom: solid;
+	border-bottom-width: 2px;
+	padding-bottom: 40px;
+	padding-top: 40px;
+	text-align: center;
+	width:100%;
+}
+
+.container .row .colbox .featureText h3{
+
+	padding-left: 5%;
+	padding-right: 5%;
+	text-align: center;
+	font-family: 'Muli', sans-serif;
+}
+
+.container .row .feature {
+	margin: 0 auto;
+
+}
+
+
+.container .row .feature img{
+	width: 100%;
+	height: 300px;
+	padding-left: 10%;
+	padding-right: 10%;
+	max-width: 400px;
+
+}
+
+.container .row .colbox .memberPhoto img{
+	margin:0;
+	padding-left: 10%;
+	padding-right: 10%;
+	object-fit: cover;
+	height: 400px;
+	width:100%;
+	max-width: 500px;
+}
+
+.container .row .colbox p{
+	padding-left: 10%;
+	padding-right: 10%;
+}
+
+.container .row .order-last {
+	margin:0;
+}
+
+.container .row .colbox h3{
+	padding-top: 25px;
+	text-align: center;
+
+}
+
+.container .row .colbox h5{
+	text-align: center;
+}
+
+.container .row .colbox{
+	padding-bottom: 40px;
+	margin:0;
+}
+
+.containbox{
+	max-width: 1000px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+footer{
+	margin-top: 20px;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+
+@media (min-width: 768px){
+
+
+	.container .row {
+		display:flex;
+		flex-direction: row;
+	}
+
+	#a{
+		order:2;
+	}
+	
+	#b{
+		order:1;
+		padding-left: 5%;
+
+	}
+
+
+	.JumboHeaderImg{
+		height:550px;
+	}
+}
+
+@media (min-width: 992px){
+
+	.JumboHeaderImg{
+		height:700px;
+
+	}
+}
