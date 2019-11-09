@@ -1,0 +1,46 @@
+
+html,body{
+	margin:0;
+	padding:0;
+}
+
+.container{
+	display: flex;
+	flex-direction: column;
+	background-color: #52AB3F;
+	width: 100%;
+	text-align: center;
+	padding-top: 10px;
+}
+
+.container a{
+	color:white;
+	text-decoration: none;
+	width: 100%
+	padding-top:20px;
+	padding-bottom: 20px;
+	text-align: center;
+
+}
+
+.container .option:hover{
+	background-color: #F8F8F8;
+	color:black;
+}
+
+@media (min-width: 768px){
+	.container {
+		flex-flow: row wrap;
+		flex-direction: row;
+	}
+	.container .option{
+		width:50%;
+	}
+
+}
+
+@media(min-width: 992px){
+	.container .option{
+		width:25%;
+	}
+}

@@ -1,0 +1,29 @@
+
+html,body{
+	padding: 0;
+	margin: 0;
+}
+
+#header{
+	border-style: solid;
+	border-width: 2px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 0px;
+	text-align: center;
+	width: 750px;
+}
+
+#taskList {
+	width: 500px;
+	border-width: 2px;
+	border-style: solid;
+	margin-left: auto;
+	margin-right:auto;
+	margin-top: 100px;
+}
+
+#taskList h1{
+	padding-left: 5px;
+}
+

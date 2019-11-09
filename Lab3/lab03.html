@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>JS Photo Gallery</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<style>
+		.clearfloat {
+			clear: both;
+		}
+
+		.section {
+			width: 600px;
+			margin: auto;
+		}
+
+		h1 {
+			text-align: center;
+		}
+
+		.thumbnail {
+			border: 1px solid #000;
+			width: 138px;
+			height: 138px;
+			margin: 5px;
+			float: left;
+			overflow: hidden;
+
+			opacity: 0.6;
+
+			cursor: pointer;
+		}
+
+		.thumbnail:hover {
+			opacity: 1.0
+		}
+
+		.thumbnail > img {
+			height: 100%;
+		}
+
+		#main-img-container {
+			text-align: center;
+			margin-top: 30px;
+		}
+
+		#main-img-container img {
+			max-width: 100%;
+		}
+
+		#main-img-container p {
+			font-size: 1.5em;
+		}
+
+		/* Desktops */
+		@media (max-width: 1199px) {
+
+		}
+
+		/* Tablets */
+		@media (max-width: 991px) {
+
+		}
+
+		/* Phones */
+		@media (max-width: 767px) {
+			#thumbnail-wrapper {
+				width: 300px;
+				margin: auto;
+			}
+		}
+	</style>
+</head>
+<body>
+	<div id="gallery" class="section">
+		<h1>USC Image Gallery</h1>
+
+		<div id="thumbnail-wrapper">
+			<div class="thumbnail">
+				<img src="images/thumb_1.jpg" alt="USC Village">
+			</div>
+
+			<div class="thumbnail">
+				<img src="images/thumb_2.jpg" alt="Tutor Campus Center">
+			</div>
+
+			<div class="thumbnail">
+				<img src="images/thumb_3.jpg" alt="VKC">
+			</div>
+
+			<div class="thumbnail">
+				<img src="images/thumb_4.jpg" alt="Fountain">
+			</div>
+
+			<div class='clearfloat'></div>
+
+		</div> <!-- #thumbnail-wrapper -->
+
+		<div id="main-img-container">
+			<img src="images/thumb_1.jpg" alt="USC Village" id="main-img">
+			<p>Usc Village</p>
+		</div> <!-- #main-img-container -->
+
+	</div> <!-- .section -->
+
+
+	<script>
+		let thumbnail = document.querySelectorAll(".thumbnail");
+		//for loop will register a function to be ran everytime for every thumbnail div 
+		for(let i = 0; i < thumbnail.length; i++){
+			//this linke sets up the function to be ran depeneding on the event.
+			//in this case its a click of the div
+			thumbnail[i].onclick = function(){
+				//this for loop sets the opacity of all the thumbnails to 0.6 
+				//and their border to black.
+				for(let j = 0; j < thumbnail.length; j ++)
+				{
+					thumbnail[j].style.opacity = 0.6;	
+					thumbnail[j].style.borderColor = "black";
+				}
+				//these lines then change the opacity of the clicked thumbnail to be 1 
+				//and its border to red/ 
+				this.style.opacity = 1.0;	
+				this.style.borderColor = "red";
+			//this line changes the src elemnt of the mian-img-container to be the src of the div that was clicked.
+			let source = this.getElementsByTagName('img');
+			document.getElementById("main-img-container").getElementsByTagName('img')[0].src = source[0].src;
+
+			//sets the alt value of the main image to be the alt value of the clicked div
+			document.getElementById("main-img-container").getElementsByTagName('img')[0].alt = this.getElementsByTagName('img')[0].alt;
+
+
+			//this line changes the text of the "main-img-container" to the alt value of 
+			// the div that was clicked.
+			document.getElementById("main-img-container").getElementsByTagName('p')[0].innerHTML = this.getElementsByTagName('img')[0].alt;	
+			}
+		}
+	</script>
+</body>
+</html>
