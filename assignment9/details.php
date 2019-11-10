@@ -1,3 +1,28 @@
+
+
+<?php
+
+	$host = "303.itpwebdev.com";
+	$user = "jersongu_db_itp";
+	$password = "CECSLogitech2428";
+	$db = "jersongu_dvd_db";
+	//Instance of mysqli class
+	$mysqli = new mysqli($host, $user, $password, $db);
+	var_dump($_GET);
+	//Check if there was an error connecting 
+	if($mysqli->connect_errno){
+		//echo out error message and exit program. There is no need to go on if there is no DB connection
+		echo $mysqli->connect_errno;
+		exit();
+	}
+	$mysqli->set_charset("utf8");
+	$query = "SELECT title, release_date, award, labels.label, sounds.sound, genres.genre, ratings.rating, formats.format FROM dvd_titles JOIN labels ON dvd_titles.label_id = labels.label_id JOIN sounds ON sounds.sound_id = dvd_titles.sound_id JOIN genres ON dvd_titles.genre_id = genres.genre_id JOIN ratings ON ratings.rating_id = dvd_titles.rating_id JOIN formats ON formats.format_id = dvd_titles.format_id WHERE dvd_titles.dvd_title_id = " . $_GET["dvd_title_id_"] . ";";
+	$result = $mysqli->query($query);
+	if(!$result){
+		$error = $mysqli->error;
+	}
+	$row = $result->fetch_assoc();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -26,48 +51,49 @@
 		<div class="row mt-4">
 			<div class="col-12">
 
-				<div class="text-danger font-italic">Display Errors Here</div>
-
+				<?php if(isset($error) && !empty($error)):?>
+					<div class="text-danger font-italic"> <?php echo $error;?></div>
+				<? endif;?>
 				<table class="table table-responsive">
 
 					<tr>
 						<th class="text-right">Title:</th>
-						<td><!-- PHP Output Here --></td>
+						<td><?php echo $row['title'];?></td>
 					</tr>
 
 					<tr>
 						<th class="text-right">Release Date:</th>
-						<td><!-- PHP Output Here --></td>
+						<td><?php echo $row['release_date'];?></td>
 					</tr>
 
 					<tr>
 						<th class="text-right">Genre:</th>
-						<td><!-- PHP Output Here --></td>
+						<td><?php echo $row['genre'];?></td>
 					</tr>
 
 					<tr>
 						<th class="text-right">Label:</th>
-						<td><!-- PHP Output Here --></td>
+						<td><?php echo $row['label'];?></td>
 					</tr>
 
 					<tr>
 						<th class="text-right">Rating:</th>
-						<td><!-- PHP Output Here --></td>
+						<td><?php echo $row['rating'];?></td>
 					</tr>
 
 					<tr>
 						<th class="text-right">Sound:</th>
-						<td><!-- PHP Output Here --></td>
+						<td><?php echo $row['sound'];?></td>
 					</tr>
 
 					<tr>
 						<th class="text-right">Format:</th>
-						<td><!-- PHP Output Here --></td>
+						<td><?php echo $row['format'];?></td>
 					</tr>
 
 					<tr>
 						<th class="text-right">Award:</th>
-						<td><!-- PHP Output Here --></td>
+						<td><?php echo $row['award'];?></td>
 					</tr>
 
 				</table>

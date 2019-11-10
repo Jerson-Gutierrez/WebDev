@@ -1,12 +1,10 @@
 <?php
-
 	$host = "303.itpwebdev.com";
 	$user = "jersongu_db_itp";
 	$password = "CECSLogitech2428";
 	$db = "jersongu_dvd_db";
 
 	$today = date("Y-m-d");
-
 	//Instance of mysqli class
 	$mysqli = new mysqli($host, $user, $password, $db);
 
@@ -18,7 +16,7 @@
 	}
 	$mysqli->set_charset("utf8");
 	//Need to get DVD title, release date, genre, rating
-	$query = "SELECT title, release_date, genres.genre, ratings.rating 
+	$query = "SELECT dvd_titles.title, dvd_titles.release_date,dvd_titles.award, dvd_title_id, genres.genre, ratings.rating
 	FROM dvd_titles
     JOIN genres
 		ON dvd_titles.genre_id = genres.genre_id
@@ -36,7 +34,6 @@
 	}
 
 	if(isset($_GET["rating"]) && !empty($_GET["rating"])){
-		echo "HUUUHHHHHH";
 		$query = $query . "AND dvd_titles.rating_id =". $_GET["rating"]. " "; 
 	}
 
@@ -58,7 +55,6 @@
 	 else if(!strcmp("yes", $_GET["award"])){
 	 	$query = $query . "AND dvd_titles.award IS NOT NULL";
 	 }
-
 
 	 if(isset($_GET["release_date_to"]) && empty($_GET["release_date_to"])&& isset($_GET["release_date_from"]) && !empty($_GET["release_date_from"])){
 	 	$query = $query . "AND dvd_titles.release_date BETWEEN '". $_GET["release_date_from"] . "' AND '" . $today . "' AND dvd_titles.release_date IS NOT NULL"; 
@@ -120,6 +116,7 @@
 				<table class="table table-hover table-responsive mt-4">
 					<thead>
 						<tr>
+							<th></th>
 							<th>DVD Title</th>
 							<th>Release Date</th>
 							<th>Genre</th>
@@ -131,8 +128,17 @@
 
 						<?php while($row = $results->fetch_assoc()):?>
 							<tr>
+
+
 								<td>
-									<?php echo $row["title"]; ?>
+ 								<a href="delete.php?dvd_title_id =<?php echo $row['dvd_title_id'];?>" class="btn btn-outline-danger delete-btn"> Delete
+									</a>
+								</td>
+								<td>
+									<a href="
+										details.php?dvd_title_id =<?php echo $row['dvd_title_id'];?>">
+										<?php echo $row['title']; ?>
+									</a>
 								</td>
 								<td><?php echo $row["release_date"]; ?></td>
 								<td><?php echo $row["genre"]; ?></td>
@@ -146,7 +152,7 @@
 		</div> <!-- .row -->
 		<div class="row mt-4 mb-4">
 			<div class="col-12">
-				<a href="search_form.php" role="button" class="btn btn-primary">Back to Form</a>
+				<a href="search_form.php?dvd_title_id=<?php echo $row['dvd_title_id'];?>" role="button" class="btn btn-primary">Back to Form</a>
 			</div> <!-- .col -->
 		</div> <!-- .row -->
 	</div> <!-- .container-fluid -->
